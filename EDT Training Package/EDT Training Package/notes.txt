@@ -1,0 +1,129 @@
+A SIAPS report on the development of the EDT training package
+* Overall SIAPS objectives
+* Content was revised based on lessons learned from previous trainings
+* Sections of the training package
+* Methods:
+	SIAPS has collaborated with the UNAM IT department, and begun the process of setting up the EDT training laboratory. 
+	The overall objective is to ensure that UNAM, NHTC and MoHSS are equipped to provide 
+	pre-service and in-service training on the EDT in a consistent manner. 
+	Future EDT trainings will be based on a standardised training package which 
+	includes real-life process-based scenarios for active monitoring and 
+	management of ART patients and ARVs using the tool. 	
+* Conclusion - Standardised way of pre- and in-service training by MoHSS, UNAM and NHTC.
+
+	Table of Contents for the EDT Training Package 
+			- The EDT Trainer's Guide -
+
+		Create a course structure diagram
+		
+		Document topic outlines, learning objectives, learning activities
+155
+187
+89
+--
+247
+150
+70
+--
+		Instructional Material
+			Presentation Slides
+			Facilitator Guide
+			Participant Guide
+			Job Aids
+
+			
+
+		Learning Outcomes	
+		Length of Training
+		Target Learners
+
+	Technology/Simulators based training
+
+	1. Overall goals and objectives of the training
+	2. Training approach
+		Highly visual, with live demos on the EDT during the course of the training, 
+		practical sessions too based on case studies.
+		Results will be measured by completeness of data, e.g. Unique # entry; Analysis of Dispensing practices; [Duplicate patient entries]; 
+			Optimal distribution of patients over the months, Number of stock taking done over 12 months; Use of the EDT Mobile; Use of the EDT features;
+			Completeness of the Monthly ART report
+	3. EDT Processes and how they affect the ART process flow + Core skills to be learnt
+	4. EDT Mobile Processes
+	Annex A: Case Studies
+	Annex B: Job aids and Forms 
+		ART Recruitment Form for PHC facilities without the EDT
+		ARV Medicine Leaflets with barcodes and three digit codes for dispensing using the EDT Mobile
+		ART Monthly Reporting template
+	Annex C: Power Point Training Slides and Workbooks
+	Annex D: Pre-and-Post Test (Exercise) Sheets
+	Annex E: Training programme/schedule
+	Annex F: Feedback forms for completion by participants
+	Annex G: Preparing the EDT training lab - Installation Check lists - Blank database - A Pre-requisite
+	Annex H: User Manual
+------------------------------------------------------------------------------------------------------------
+
+25/11	- 26/11
+1. Script to use to add new site to the EDT 
+2. Sites with duplicates EDTM dispensing that need to be updated just like Outapi: KHC, KM, Karasburg
+3. Oshakati reporting
+4. W/Screen RFQ
+5. Follow up - MTC 3G devices issue; Biko;
+6. Prepare for EDT trip - call sites; do inventory of EDT Mobile at NMPC/MSH
+7. Pharmadex update on NMRC server
+8. Send Software: (EDT Image + Apps) to Mirijama@Rundu
+
+To do LIST: 20/07/2015
+* EDT Mobile - Allow entry / update of dosage values
+* 1/4 dosage for Efavirenz 200mg
+
+Annah; WCH; WCP;
+
+eLMIS
+* Demo of existing HIV & Commodity dashboards (1h, ..)
+* Sharing of documents to get started with work
+* * ART Monthly Report - with real data
+* * Reference data: Regimens, Regions, HFs etc. (from EDT)
+* Drafting the itinerary from 17 Aug
+* Note in letter about second visit around November in case SA can issue a transit visa for a longer period.
+
+Directorate: Tertiary Health Care and Clinical Support Services
+Division: Pharmaceutical Services
+Subdivision: National Medicines Policy Coordination
+
+-- EDT Mobile Query Query all patients regardless of status
+-- SM:04/02/15
+SELECT PAM.PAMARTID, LuRegimen.Description INTO tmpExpPAM
+FROM PAM INNER JOIN LuRegimen ON PAM.PAMREMID = LuRegimen.REGID
+WHERE (PAM.PAMSTAID <> 1) 
+AND (PAM.PAMluRefID Like [Forms]![99]![fsfrChild].[Form].[Referral] & "*" 
+		OR
+	 PAM.PAMluRefID Is Null);
+-- Original Condition: Query Active, Lost, TranferIn, In Transit, Re-Start 		
+WHERE (PAM.PAMSTAID IN (2, 10, 5, 7, 11)
+AND (PAM.PAMluRefID Like [Forms]![99]![fsfrChild].[Form].[Referral] & "*" 
+		OR
+	 PAM.PAMluRefID Is Null);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
